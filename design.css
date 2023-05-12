@@ -1,0 +1,681 @@
+html, body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+body {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #fff;
+    font-family: 'Lato', sans-serif;
+}
+#landing{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #ddd;
+  color: #666;
+  z-index: 100;
+}
+#landing h1{
+  text-align: center;
+  margin: 30px 0;
+  font-size: 40px;
+}
+#landing .curtain{
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: #efefef;
+  z-index: 200;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+  -moz-transform: translateY(-50%) translateX(-50%);
+  transform: translateY(-50%) translateX(-50%);
+  -webkit-transition: all 1.5s ease-out 0.1s;
+  -moz-transition: all 1.5s ease-out 0.1s;
+  transition: all 1.5s ease-out 0.1s;
+}
+#landing .container{
+  position: absolute;
+  top:50%;
+  left: 50%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+  -moz-transform: translateY(-50%) translateX(-50%);
+  transform: translateY(-50%) translateX(-50%);
+  width: 75%;
+  max-width: 950px;
+  height: 50%;
+  text-align: center;
+  background-color: #efefef;
+  z-index: 200;
+  -webkit-transition: all 1s ease-out;
+  -moz-transition: all 1s ease-out;
+  transition: all 1s ease-out;
+}
+#landing .container h2{
+  font-weight: normal;
+  position: absolute;
+  bottom: 100%;
+  margin: 5px 0;
+}
+#landing .container:before{
+  content: 'What is yours?';
+  position: absolute;
+  width: 100%;
+  bottom:100%;
+  left: 0;
+  font-size: 30px;
+  line-height: 35px;
+  text-align: left;
+}
+#landing .container:after{
+  content: 'Please click your favourite brand.';
+  position: absolute;
+  width: 100%;
+  top:100%;
+  left: 0;
+  font-size: 16px;
+  text-align: left;
+}
+#landing .container .brand{
+  width: 49%;
+  display: inline-block;
+  position: relative;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  transform: translateY(-50%);
+  -webkit-transition: all 0.4s ease-out 0.4s, opacity 0.3s ease-out;
+  -moz-transition: all 0.4s ease-out 0.4s, opacity 0.3s ease-out;
+  transition: all 0.4s ease-out 0.4s, opacity 0.3s ease-out;
+  z-index:250;
+  cursor: pointer;
+}
+#landing .container .brand.left.centered{
+  -webkit-transform: translateY(-50%) translateX(50%);
+  -moz-transform: translateY(-50%) translateX(50%);
+  transform: translateY(-50%) translateX(50%);
+}
+#landing .container .brand.right.centered{
+  -webkit-transform: translateY(-50%) translateX(-50%);
+  -moz-transform: translateY(-50%) translateX(-50%);
+  transform: translateY(-50%) translateX(-50%);
+}
+#landing .container .brand img{
+  width: 80%;
+  height: auto;
+  max-width: 250px;
+}
+#landing .container .brand.right{
+}
+@media screen and (max-width: 768px) {
+  #landing h1{
+    font-size: 28px;
+  }
+  #landing .container{
+    position: absolute;
+    width: 84%;
+    height: 60%;
+    top: 28%;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+  #landing .container:before{
+    font-size: 22px;
+    line-height: 30px;
+  }
+  #landing .container:after{
+    font-size: 12px;
+  }
+  #landing .container .brand{
+    display: block;
+    width: auto;
+    height: 50%;
+    top: 0;
+    -webkit-transform: none;
+    -moz-transform: none;
+    transform: none;
+  }
+  #landing .container .brand.right{
+    float: none;
+  }
+  #landing .container .brand img{
+    width: auto;
+    height: 80%;
+    max-width: 300px;
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+}
+#boxwrapper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    -webkit-perspective: 1000px;
+    -moz-perspective: 1000px;
+    perspective: 1000px;
+    -webkit-perspective-origin: 50% 50%;
+    -moz-perspective-origin: 50% 50%;
+    perspective-origin: 50% 50%;
+}
+.arrow {
+    position: absolute;
+    color: #fff;
+    z-index:300;
+}
+.arrow i{
+  width: 40px;
+  height: auto;
+  opacity: 0.5;
+  color: black;
+  cursor: pointer;
+}
+.arrow:hover i{
+  opacity: 1;
+}
+.arrow.up {
+    top: 5%;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0%);
+    -moz-transform: translate(-50%, 0%);
+    transform: translate(-50%, 0%);
+}
+.arrow.up i{
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  transform: rotate(-90deg) ;
+}
+.arrow.down {
+    bottom: 5%;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0%);
+    -moz-transform: translate(-50%, 0%);
+    transform: translate(-50%, 0%);
+}
+.arrow.down i{
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  transform: rotate(90deg) ;
+}
+.arrow.left {
+    left: 5%;
+    top: 50%;
+    -webkit-transform: translate(0%, -50%);
+    -moz-transform: translate(0%, -50%);
+    transform: translate(0%, -50%);
+}
+.arrow.left i{
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  transform: rotate(180deg) ;
+}
+.arrow.right {
+    right: 5%;
+    top: 50%;
+    -webkit-transform: translate(0%, -50%);
+    -moz-transform: translate(0%, -50%);
+    transform: translate(0%, -50%);
+}
+#box {
+    width: 300px;
+    height: 180px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    cursor: pointer;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform-origin: center center;
+    -moz-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-transform: translate(-50%, -50%) rotateX(40deg);
+    -moz-transform: translate(-50%, -50%) rotateX(40deg);
+    transform: translate(-50%, -50%) rotateX(40deg);
+}
+#box img {
+    display: none;
+}
+#box.nike img.nike, #box.adidas img.adidas {
+    display: block;
+}
+#box .frontside {
+    z-index: 2;
+}
+#box .backside {
+    z-index: 1;
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+#box.nike .backside {
+    background-color: #F6BF6F;
+}
+#box.adidas .backside {
+    background-color: #0051ba;
+}
+.frontside, .backside {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 300px;
+    color: white;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+#box .face {
+    position: absolute;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transition: all .3s linear;
+    -moz-transition: all .3s linear;
+    transition: all .3s linear;
+}
+#box.nike .face {
+    border: 1px solid #912E00;
+    background-color: #E95814;
+}
+#box.adidas .face {
+    border: 1px solid #052C55;
+    background-color: #0051ba;
+}
+
+/*COVER OF THE BOX*/
+
+#box .face.front {
+    width: 300px;
+    height: 180px;
+    -webkit-transform: translateY(0px) translateZ(0px) rotateX(0deg);
+    -moz-transform: translateY(0px) translateZ(0px) rotateX(0deg);
+    transform: translateY(0px) translateZ(0px) rotateX(0deg);
+    -webkit-transform-origin: top center;
+    -moz-transform-origin: top center;
+    transform-origin: top center;
+    z-index: 100;
+}
+#box.open .face.front {
+    -webkit-transform: translateY(0px) translateZ(0px) rotateX(90deg);
+    -moz-transform: translateY(0px) translateZ(0px) rotateX(90deg);
+    transform: translateY(0px) translateZ(0px) rotateX(120deg);
+}
+#box .face.front .hole:nth-child(1) {
+    width: 18px;
+    height: 40px;
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    overflow: hidden;
+    -webkit-transform: translate(0%, -50%);
+    -moz-transform: translate(0%, -50%);
+    transform: translate(0%, -50%);
+}
+#box .face.front .hole:nth-child(2) {
+    width: 18px;
+    height: 40px;
+    position: absolute;
+    top: 50%;
+    right: 0%;
+    overflow: hidden;
+    -webkit-transform: translate(0%, -50%);
+    -moz-transform: translate(0%, -50%);
+    transform: translate(0%, -50%);
+}
+#box.nike .face.front .hole:nth-child(1):after {
+    content: '';
+    width: 35px;
+    height: 40px;
+    position: absolute;
+    left: -100%;
+    background-color: #222;
+    border-radius: 100%;
+    box-shadow: inset 0px 0px 15px #000;
+}
+#box.nike .face.front .hole:nth-child(2):after {
+    content: '';
+    width: 35px;
+    height: 40px;
+    position: absolute;
+    right: -100%;
+    background-color: #222;
+    border-radius: 100%;
+    box-shadow: inset 0px 0px 15px #000;
+}
+#box .face.front> .frontside> img.nike {
+    width: 30%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+#box .face.front> .frontside> img.adidas {
+    position: absolute;
+    height: 100%;
+    width: 20%;
+    top: 0;
+    right: 45%;
+    transform: skew(25deg);
+}
+#box .face.front .flap {
+    position: absolute;
+    z-index: 150;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+#box.nike .face.front .flap {
+    border: 1px solid #912E00;
+    background-color: #E95814;
+}
+#box.adidas .face.front .flap {
+    border: 1px solid #052C55;
+    background-color: #0051ba;
+}
+#box .face.front .flap .frontside {
+    z-index: 152;
+}
+#box .face.front .flap .backside {
+    z-index: 151;
+}
+#box .face.front .flap.front {
+    height: 50px;
+    width: 300px;
+    left: -1px;
+    -webkit-transform: translateY(180px) translateZ(0px) rotateX(-90deg);
+    -moz-transform: translateY(180px) translateZ(0px) rotateX(-90deg);
+    transform: translateY(180px) translateZ(0px) rotateX(-90deg);
+    -webkit-transform-origin: top center;
+    -moz-transform-origin: top center;
+    transform-origin: top center;
+}
+#box .face.front .flap.front .frontside img.adidas {
+    position: absolute;
+    height: 100%;
+    width: 20%;
+    top: 0;
+    right: 25%;
+    transform: skew(35deg);
+}
+#box .face.front .flap.left-side {
+    width: 50px;
+    height: 180px;
+    top: -1px;
+    left: -1px;
+    position: relative;
+    /*overflow: hidden;*/
+    -webkit-transform: translateY(0px) translateZ(0px) rotateX(90deg);
+    -moz-transform: translateY(0px) translateZ(0px) rotateX(90deg);
+    transform: translateZ(-50px) rotateY(-90deg);
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    transform-origin: left center;
+    border-top-left-radius: 60px 40px;
+}
+#box .face.front .flap.left-side .frontside .hole {
+    width: 20px;
+    height: 40px;
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    overflow: hidden;
+    -webkit-transform: translate(0%, -50%);
+    -moz-transform: translate(0%, -50%);
+    transform: translate(0%, -50%);
+}
+#box.nike .face.front .flap.left-side .frontside .hole:after {
+    content: '';
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 0%;
+    left: 100%;
+    background-color: #222;
+    -webkit-transform: translate(0%, -50%);
+    -moz-transform: translate(0%, -50%);
+    transform: translate(-50%, 0%);
+    border-radius: 100%;
+    box-shadow: inset 0px 0px 15px #000;
+}
+#box .face.front .flap.left-side .backside .hole {
+    width: 20px;
+    height: 40px;
+    position: absolute;
+    top: 50%;
+    right: 60%;
+    overflow: hidden;
+    -webkit-transform: translate(0%, -50%);
+    -moz-transform: translate(0%, -50%);
+    transform: translate(0%, -50%);
+}
+#box.nike .face.front .flap.left-side .backside .hole:after {
+    content: '';
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 0;
+    left: 0%;
+    background-color: #222;
+    -webkit-transform: translate(0%, -50%);
+    -moz-transform: translate(0%, -50%);
+    transform: translate(-50%, 0%);
+    border-radius: 100%;
+    box-shadow: inset 0px 0px 15px #000;
+}
+#box .face.front .flap.right-side {
+    width: 50px;
+    height: 180px;
+    top: -1px;
+    left: -1px;
+    -webkit-transform: translateY(250px) translateZ(0px) rotateX(-90deg);
+    -moz-transform: translateY(250px) translateZ(0px) rotateX(-90deg);
+    transform: translateX(250px) translateZ(-50px) rotateY(90deg);
+    -webkit-transform-origin: right center;
+    -moz-transform-origin: right center;
+    transform-origin: right center;
+}
+#box .face.front .flap.right-side .frontside .hole {
+    width: 20px;
+    height: 40px;
+    position: absolute;
+    top: 50%;
+    right: 60%;
+    overflow: hidden;
+    -webkit-transform: translate(0%, -50%);
+    -moz-transform: translate(0%, -50%);
+    transform: translate(0%, -50%);
+}
+#box.nike .face.front .flap.right-side .frontside .hole:after {
+    content: '';
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    background-color: #222;
+    -webkit-transform: translate(0%, -50%);
+    -moz-transform: translate(0%, -50%);
+    transform: translate(0%, -50%);
+    border-radius: 100%;
+    box-shadow: inset 0px 0px 15px #000;
+}
+#box .face.front .flap.right-side .backside .hole {
+    width: 20px;
+    height: 40px;
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    overflow: hidden;
+    -webkit-transform: translate(0%, -50%);
+    -moz-transform: translate(0%, -50%);
+    transform: translate(0%, -50%);
+}
+#box.nike .face.front .flap.right-side .backside .hole:after {
+    content: '';
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    background-color: #222;
+    -webkit-transform: translate(0%, -50%);
+    -moz-transform: translate(0%, -50%);
+    transform: translate(0%, -50%);
+    border-radius: 100%;
+    box-shadow: inset 0px 0px 15px #000;
+}
+#box .face.front .flap .frontside> img.nike {
+    width: 60%;
+    position: absolute;
+}
+#box .face.front .flap.right-side .frontside> img.nike {
+    top: 8px;
+    right: 70%;
+    -webkit-transform: translateX(50%) rotate(-90deg);
+    -moz-transform: translateX(50%) rotate(-90deg);
+    transform: translateX(50%) rotate(-90deg);
+}
+#box .face.front .flap.left-side .frontside> img.nike {
+    bottom: 8px;
+    right: 30%;
+    -webkit-transform: translateX(50%) rotate(90deg);
+    -moz-transform: translateX(50%) rotate(90deg);
+    transform: translateX(50%) rotate(90deg);
+}
+#box .face.front .flap .frontside> img.adidas {
+    width: 80%;
+    position: absolute;
+}
+#box .face.front .flap.right-side .frontside> img.adidas {
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%) rotate(-90deg);
+    -moz-transform: translateX(-50%) translateY(-50%) rotate(-90deg);
+    transform: translateX(-50%) translateY(-50%) rotate(-90deg);
+}
+#box .face.front .flap.left-side .frontside> img.adidas {
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%) rotate(90deg);
+    -moz-transform: translateX(-50%) translateY(-50%) rotate(90deg);
+    transform: translateX(-50%) translateY(-50%) rotate(90deg);
+}
+
+/*BOTTOM OF THE BOX*/
+
+#box .face.back {
+    width: 298px;
+    height: 178px;
+    top: 1px;
+    left: 1px;
+    -webkit-transform: translateY(0px) translateZ(-95px) rotateX(180deg);
+    -moz-transform: translateY(0px) translateZ(-95px) rotateX(180deg);
+    transform: translateY(0px) translateZ(-95px) rotateX(180deg);
+    -webkit-transform-origin: center center;
+    -moz-transform-origin: center center;
+    transform-origin: center center;
+}
+
+/*BACK AND FRONT OF THE BOX*/
+
+#box .face.bottom {
+    width: 298px;
+    height: 93px;
+    top: 1px;
+    left: 1px;
+    -webkit-transform: translateY(180px) translateZ(0px) rotateX(-90deg);
+    -moz-transform: translateY(180px) translateZ(0px) rotateX(-90deg);
+    transform: translateY(180px) translateZ(0px) rotateX(-90deg);
+    -webkit-transform-origin: top center;
+    -moz-transform-origin: top center;
+    transform-origin: top center;
+}
+#box .face.bottom .frontside> img.adidas:nth-child(1) {
+    position: absolute;
+    height: 100%;
+    width: 20%;
+    top: 0;
+    right: 20%;
+    transform: skew(35deg);
+}
+#box .face.bottom .frontside> img.adidas:nth-child(2) {
+    position: absolute;
+    width: 13%;
+    top: 60%;
+    left: 3%;
+}
+#box .face.top {
+    width: 298px;
+    height: 93px;
+    top: 1px;
+    left: 1px;
+    -webkit-transform: translateY(0px) translateZ(-95px) rotateX(90deg);
+    -moz-transform: translateY(0px) translateZ(-95px) rotateX(90deg);
+    transform: translateY(0px) translateZ(-95px) rotateX(90deg);
+    -webkit-transform-origin: top center;
+    -moz-transform-origin: top center;
+    transform-origin: top center;
+}
+#box .side {
+    width: 93px;
+    height: 178px;
+}
+#box .face.left {
+    top: 1px;
+    left: 1px;
+    -webkit-transform: translateX(0px) translateZ(-95px) rotateY(-90deg);
+    -moz-transform: translateX(0px) translateZ(-95px) rotateY(-90deg);
+    transform: translateX(0px) translateZ(-95px) rotateY(-90deg);
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    transform-origin: left center;
+}
+#box .face.right {
+    top: 1px;
+    left: 1px;
+    -webkit-transform: translateX(205px) translateZ(-95px) rotateY(90deg);
+    -moz-transform: translateX(205px) translateZ(-95px) rotateY(90deg);
+    transform: translateX(205px) translateZ(-95px) rotateY(90deg);
+    -webkit-transform-origin: right center;
+    -moz-transform-origin: right center;
+    transform-origin: right center;
+}
+#signature{
+	font-family: monospace;
+	font-size: 16px;
+	position: absolute;
+	right: 20px;
+	bottom: 20px;
+	color: #000;
+	font-weight: normal;
+	z-index: 150;
+	margin: 0;
+}
+#signature a{
+	text-decoration: none;
+	color: rgb(37,33,142);
+	font-weight: bold;
+}
+#signature a:hover{
+	text-decoration: underline;
+}
+@media screen and (max-width: 768px) {
+  #signature{
+  	font-size: 10px;
+  	right: 10px;
+  	bottom: 5px;
+  }
+}
